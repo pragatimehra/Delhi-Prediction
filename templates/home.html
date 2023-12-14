@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="shortcut icon" href="#">
+    <title>Delhi House Pricing</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-image: linear-gradient(to right top, #000000, #2a1e6b, #2c2055, #48318d, #2d2270);
+        }
+
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        .toggle {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .toggle-switch {
+            display: inline-block;
+            background: #9f91cd;
+            border-radius: 16px;
+            width: 58px;
+            height: 32px;
+            position: relative;
+            vertical-align: middle;
+            transition: background 0.25s;
+        }
+
+        .toggle-switch:before,
+        .toggle-switch:after {
+            content: "";
+        }
+
+        .toggle-switch:before {
+            display: block;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: left 0.25s;
+        }
+
+        .toggle:hover .toggle-switch:before {
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .toggle-checkbox:checked+.toggle-switch {
+            background: #5441cd;
+            ;
+        }
+
+        .toggle-checkbox:checked+.toggle-switch:before {
+            left: 30px;
+        }
+
+        .toggle-checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .toggle-label {
+            margin-left: 5px;
+            position: relative;
+            top: 2px;
+        }
+
+        /* ATM Toggle */
+
+        .atm {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .atm-switch {
+            display: inline-block;
+            background: #9f91cd;
+            border-radius: 16px;
+            width: 58px;
+            height: 32px;
+            position: relative;
+            vertical-align: middle;
+            transition: background 0.25s;
+        }
+
+        .atm-switch:before,
+        .atm-switch:after {
+            content: "";
+        }
+
+        .atm-switch:before {
+            display: block;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: left 0.25s;
+        }
+
+        .atm:hover .atm-switch:before {
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .atm-checkbox:checked+.atm-switch {
+            background: #5441cd;
+            ;
+        }
+
+        .atm-checkbox:checked+.atm-switch:before {
+            left: 30px;
+        }
+
+        .atm-checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .atm-label {
+            margin-left: 5px;
+            position: relative;
+            top: 2px;
+        }
+
+        /* 24x7 Security Toggle */
+
+        .security {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .security-switch {
+            display: inline-block;
+            background: #9f91cd;
+            border-radius: 16px;
+            width: 58px;
+            height: 32px;
+            position: relative;
+            vertical-align: middle;
+            transition: background 0.25s;
+        }
+
+        .security-switch:before,
+        .security-switch:after {
+            content: "";
+        }
+
+        .security-switch:before {
+            display: block;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: left 0.25s;
+        }
+
+        .security:hover .security-switch:before {
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .security-checkbox:checked+.security-switch {
+            background: #5441cd;
+            ;
+        }
+
+        .security-checkbox:checked+.security-switch:before {
+            left: 30px;
+        }
+
+        .security-checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .security-label {
+            margin-left: 5px;
+            position: relative;
+            top: 2px;
+        }
+
+        /* Car Toggle */
+
+        .car {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .car-switch {
+            display: inline-block;
+            background: #9f91cd;
+            border-radius: 16px;
+            width: 58px;
+            height: 32px;
+            position: relative;
+            vertical-align: middle;
+            transition: background 0.25s;
+        }
+
+        .car-switch:before,
+        .car-switch:after {
+            content: "";
+        }
+
+        .car-switch:before {
+            display: block;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: left 0.25s;
+        }
+
+        .car:hover .car-switch:before {
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .car-checkbox:checked+.car-switch {
+            background: #5441cd;
+            ;
+        }
+
+        .car-checkbox:checked+.car-switch:before {
+            left: 30px;
+        }
+
+        .car-checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .car-label {
+            margin-left: 5px;
+            position: relative;
+            top: 2px;
+        }
+
+        /* Lift Facility Toggle */
+
+        .lift {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .lift-switch {
+            display: inline-block;
+            background: #9f91cd;
+            border-radius: 16px;
+            width: 58px;
+            height: 32px;
+            position: relative;
+            vertical-align: middle;
+            transition: background 0.25s;
+        }
+
+        .lift-switch:before,
+        .lift-switch:after {
+            content: "";
+        }
+
+        .lift-switch:before {
+            display: block;
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            transition: left 0.25s;
+        }
+
+        .lift:hover .lift-switch:before {
+            background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .lift-checkbox:checked+.lift-switch {
+            background: #5441cd;
+            ;
+        }
+
+        .lift-checkbox:checked+.lift-switch:before {
+            left: 30px;
+        }
+
+        .lift-checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .lift-label {
+            margin-left: 5px;
+            position: relative;
+            top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="color: white; text-align: center; font-size: 50px; margin-top: 70px"><b>House Pricing in Delhi</b></h1>
+    <p style="color: white; text-align: center; font-size: 25px;">Are you looking for a place to live in Delhi? </p>
+    <div class="container">
+        <div class="row">
+            <div class="card" style="width: 100%; height:100%; margin-top: 60px">
+                <form method="post" accept-charset="UTF-8">
+                    <div class="row">
+                        <div class="col-md-6 form-group" style="text-align: center; margin-top: 25px;">
+                            <label style="margin-left: 60px;"><b>Location</b></label>
+                            <select class="selectpicker form-control" id="location" name="location" required="1"
+                                style="margin-left:30px">
+                                {% for location in locations %}
+                                <option value="{{ location }}">{{ location }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group" style="text-align:center; margin-top: 25px;">
+                            <label><b>Area</b></label>
+                            <input type="number" class="form-control" id="area" name="area" required='1'
+                                placeholder="Enter Area (in sqft)" style="width: 90%; margin-left: 20px;" min="100">
+                        </div>
+
+                        <div class="col-md-6 form-group" style="text-align:center; margin-top: 10px;">
+                            <div style="float:left;">
+                                <label style="text-align:center; margin-left: 50px;"><b>No. of BHK</b></label>
+                                <input type="number" class="form-control" id="bhk" name="bhk"
+                                    placeholder="Enter Numerical Value" style="width: 100%; margin-left: 30px;"
+                                    min='1'>
+                            </div>
+
+                            <div style="float:right; margin-top: 30px; margin-right: 50px;">
+                                <label class="toggle">
+                                    <span class="toggle-label"><b>Resale</b></span>
+                                    <input class="toggle-checkbox" type="checkbox" unchecked name='toggle'>
+                                    <div class="toggle-switch"></div>
+                                    <span class="toggle-label"><b>New</b></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div style="margin: auto;">
+                            <!-- <div class="col-md-6" style="text-align:center;"> -->
+                            <div style="text-align: center;">
+                                <label class="atm" style="float: left;">
+                                    <span class="atm-label" style="margin-left:0px;"><b>Nearby ATM</b></span>
+                                    <input class="atm-checkbox" type="checkbox" unchecked name='atm'>
+                                    <div class="atm-switch"></div>
+                                </label>
+                                <label class="security" style="float: right;">
+                                    <span class="security-label" style="margin-left:40px;"><b>24x7 Security</b></span>
+                                    <input class="security-checkbox" type="checkbox" unchecked name='security'>
+                                    <div class="security-switch"></div>
+                                </label>
+                            </div>
+
+                            <!-- <div class="col-md-6" style="text-align:center;"> -->
+                            <div>
+                                <label class="car" style="float: left;">
+                                    <span class="car-label" style="margin-left:0px;"><b>Car Parking</b></span>
+                                    <input class="car-checkbox" type="checkbox" unchecked name='car'>
+                                    <div class="car-switch"></div>
+                                </label>
+                                <label class="lift" style="float: right;">
+                                    <span class="lift-label" style="margin-left:0px;"><b>Lift Facility</b></span>
+                                    <input class="lift-checkbox" type="checkbox" unchecked name='lift'>
+                                    <div class="lift-switch"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 form-group" style="text-align:center; margin-top: 30px;">
+                            <button class='btn btn-primary form-control' onclick="send_data()"
+                                style="width: 200px; margin: auto; background-color: #3d2c75;">Predict Price
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- margin-left: 500px; margin-top: 15px; margin-bottom: 15px; -->
+
+                </form>
+
+                <div class="'col=md-12" style="text-align: center;">
+                    <h3><span id="prediction"></span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function form_handler(event) {
+            event.preventDefault();
+        }
+    
+        function formatCurrency(number) {
+            const crore = Math.floor(number / 1e7);
+            const lakh = Math.floor((number % 1e7) / 1e5);
+            return crore > 0
+                ? `${crore} Crores ${lakh} Lakhs`
+                : `${lakh} Lakhs`;
+        }
+    
+        function send_data() {
+            document.querySelector('form').addEventListener("submit", form_handler);
+    
+            var fd = new FormData(document.querySelector('form'));
+    
+            var xhr = new XMLHttpRequest();
+    
+            xhr.open('POST', '/predict', true);
+    
+            document.getElementById("prediction").innerHTML = "Wait Predicting Price...!";
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    const predictedPrice = parseFloat(xhr.responseText);
+                    const formattedPrice = formatCurrency(predictedPrice);
+                    document.getElementById('prediction').innerHTML = `Estimated Price is: ₹ ${formattedPrice}`;
+                }
+            };
+    
+            xhr.onload = function () {};
+            xhr.send(fd);
+        }
+    </script>
+    
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
