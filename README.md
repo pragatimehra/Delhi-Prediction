@@ -1,4 +1,4 @@
-<h2> Project Summary : Delhi House Pricing Prediction </h2>
+<h2> Delhi House Pricing Prediction </h2>
 
 This repository showcases a web application designed to predict house prices in Delhi, incorporating a machine learning model and a Flask backend. The project utilizes a RandomForestRegressor algorithm trained on a dataset of Delhi house prices, providing users with an intuitive interface for predicting property values.
 
